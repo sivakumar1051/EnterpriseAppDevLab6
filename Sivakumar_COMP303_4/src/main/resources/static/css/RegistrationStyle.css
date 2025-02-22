@@ -1,0 +1,93 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f8f9fa;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.container {
+    background: white;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    width: 300px; /* Smaller width */
+    text-align: left;
+    max-height: 500px; /* Fix height */
+    overflow-y: auto; /* Make it scrollable */
+}
+
+h2 {
+    text-align: center;
+    color: #333;
+    font-size: 18px;
+}
+
+.form-group {
+    margin-bottom: 8px;
+}
+
+label {
+    font-weight: bold;
+    display: block;
+    margin-bottom: 4px;
+}
+
+input, textarea, select {
+    width: 100%;
+    padding: 6px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+textarea {
+    height: 50px;
+    resize: vertical;
+}
+
+.button-group {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+
+.submit-button {
+    background-color: #28a745;
+    color: white;
+    border: none;
+    padding: 8px;
+    cursor: pointer;
+    border-radius: 4px;
+    width: 48%;
+    font-size: 14px;
+}
+
+.reset-button {
+    background-color: #dc3545;
+    color: white;
+    border: none;
+    padding: 8px;
+    cursor: pointer;
+    border-radius: 4px;
+    width: 48%;
+    font-size: 14px;
+}
+
+.success-message {
+    text-align: center;
+    color: green;
+    font-weight: bold;
+    font-size: 14px;
+    margin-top: 10px;
+    background-color: #d4edda;
+    padding: 8px;
+    border-radius: 4px;
+}
+.error-message {
+    color: red;
+    font-size: 12px;
+    margin-top: 4px;
+}

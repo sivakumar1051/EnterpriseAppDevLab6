@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Workshop Registration</title>
+    <link rel="stylesheet" th:href="@{/css/RegistrationStyle.css}">
+</head>
+<body>
+    <div class="container">
+        <h2>Workshop Registration</h2>
+
+        <!-- Success Message -->
+        <p th:if="${message}" th:text="${message}" class="success-message"></p>
+
+        <!-- Show form only if registration is not successful -->
+        <div th:if="${message == null}" class="form-container">
+            <form th:action="@{/workshop/save}" th:object="${registration}" method="post">
+                
+                <div class="form-group">
+                    <label>First Name:</label>
+                    <input type="text" th:field="*{firstName}" required />
+                    <p class="error-message" th:if="${#fields.hasErrors('firstName')}" th:errors="*{firstName}"></p>
+                </div>
+
+                <div class="form-group">
+                    <label>Last Name:</label>
+                    <input type="text" th:field="*{lastName}" required />
+                    <p class="error-message" th:if="${#fields.hasErrors('lastName')}" th:errors="*{lastName}"></p>
+                </div>
+
+                <div class="form-group">
+                    <label>Company/Institution:</label>
+                    <input type="text" th:field="*{companyInstitution}" required />
+                    <p class="error-message" th:if="${#fields.hasErrors('companyInstitution')}" th:errors="*{companyInstitution}"></p>
+                </div>
+
+                <div class="form-group">
+                    <label>Address:</label>
+                    <textarea th:field="*{address}" required></textarea>
+                    <p class="error-message" th:if="${#fields.hasErrors('address')}" th:errors="*{address}"></p>
+                </div>
+
+                <div class="form-group">
+                    <label>City:</label>
+                    <input type="text" th:field="*{city}" required />
+                    <p class="error-message" th:if="${#fields.hasErrors('city')}" th:errors="*{city}"></p>
+                </div>
+
+                <div class="form-group">
+                    <label>State:</label>
+                    <input type="text" th:field="*{state}" required />
+                    <p class="error-message" th:if="${#fields.hasErrors('state')}" th:errors="*{state}"></p>
+                </div>
+
+                <div class="form-group">
+                    <label>Country:</label>
+                    <input type="text" th:field="*{country}" required />
+                    <p class="error-message" th:if="${#fields.hasErrors('country')}" th:errors="*{country}"></p>
+                </div>
+
+                <div class="form-group">
+                    <label>Email:</label>
+                    <input type="email" th:field="*{email}" required />
+                    <p class="error-message" th:if="${#fields.hasErrors('email')}" th:errors="*{email}"></p>
+                </div>
+
+                <div class="form-group">
+                    <label>Phone Number:</label>
+                    <input type="text" th:field="*{phoneNumber}" required />
+                    <p class="error-message" th:if="${#fields.hasErrors('phoneNumber')}" th:errors="*{phoneNumber}"></p>
+                </div>
+
+                <div class="form-group">
+                    <label>Meal Preference:</label>
+                    <select th:field="*{mealPreference}" required>
+                        <option value="Vegetarian">Vegetarian</option>
+                        <option value="Non-Vegetarian">Non-Vegetarian</option>
+                    </select>
+                    <p class="error-message" th:if="${#fields.hasErrors('mealPreference')}" th:errors="*{mealPreference}"></p>
+                </div>
+
+                <div class="form-group">
+                    <label>Payment Mode:</label>
+                    <select th:field="*{paymentMode}" required>
+                        <option value="Cash">Cash</option>
+                        <option value="Cheque">Cheque</option>
+                        <option value="Demand Draft">Demand Draft</option>
+                    </select>
+                    <p class="error-message" th:if="${#fields.hasErrors('paymentMode')}" th:errors="*{paymentMode}"></p>
+                </div>
+
+                <div class="form-group">
+                    <label>Cheque Number:</label>
+                    <input type="text" th:field="*{chequeNumber}" />
+                    <p class="error-message" th:if="${#fields.hasErrors('chequeNumber')}" th:errors="*{chequeNumber}"></p>
+                </div>
+
+                <div class="form-group">
+                    <label>Bank Name:</label>
+                    <input type="text" th:field="*{bankName}" />
+                    <p class="error-message" th:if="${#fields.hasErrors('bankName')}" th:errors="*{bankName}"></p>
+                </div>
+
+                <div class="form-group">
+                    <label>Payable At:</label>
+                    <input type="text" th:field="*{payableAt}" />
+                    <p class="error-message" th:if="${#fields.hasErrors('payableAt')}" th:errors="*{payableAt}"></p>
+                </div>
+
+                <div class="button-group">
+                    <button type="submit" class="submit-button">Register</button>
+                    <button type="reset" class="reset-button">Reset</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
